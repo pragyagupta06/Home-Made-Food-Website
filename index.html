@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JTG Eats</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-container">
+        <div class="logo"><a href="#">JTGeats</a></div>
+
+        <!-- Hamburger for mobile -->
+        <button class="hamburger" id="menuToggle" aria-label="Toggle Menu">
+          &#9776;
+        </button>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links" id="navLinks">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Menu</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <!-- Icons -->
+        <div class="nav-icons">
+          <button class="icon-button" onclick="handleSearch()">
+            <img
+              src="https://img.icons8.com/?size=100&id=hxUYNckTQ6tb&format=png&color=FFFFFF"
+              alt="Search"
+            />
+          </button>
+          <div class="icon-wrapper">
+            <button class="icon-button" id="cartIcon">
+              <img
+                src="https://img.icons8.com/?size=100&id=4lXg1iit5W4L&format=png&color=FFFFFF"
+                alt="Cart"
+              />
+              <span class="cart-count" id="cartCount">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Authentic Home food in India</h1>
+          <p>
+            JTG Eats is a courier service in which authentic home cook food is
+            delivered to a customer.
+          </p>
+          <div class="search-bar">
+            <input type="text" placeholder="Search food you love" />
+            <button onclick="handleSearch()">Search</button>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="Images\Cooking.png" alt="Chef Cooking" />
+        </div>
+      </div>
+    </section>
+
+    <section class="home-kitchen-section">
+      <div class="container">
+        <h2 class="section-title">Home Kitchen</h2>
+
+        <div class="pizza-grid">
+          <!-- Pizza Item 1 -->
+          <div class="pizza-card">
+            <div class="pizza-image">
+              <img src="Images\IMG-20250529-WA0006.jpg" alt="Home made pizza" />
+            </div>
+            <div class="pizza-info">
+              <h3 class="pizza-name">Burger</h3>
+              <div class="pizza-details">
+                <div class="rating">
+                  <span class="stars">⭐⭐⭐⭐ 4.5</span>
+                  <span class="reviews">(30-50 min)</span>
+                </div>
+                <div class="price-add">
+                  <span class="price">₹95</span>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart(this, 'Burger', 95)"
+                  >
+                    <span class="plus-icon">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza Item 2 -->
+          <div class="pizza-card">
+            <div class="pizza-image">
+              <img src="Images\IMG-20250529-WA0007.jpg" alt="Home made pizza" />
+              <div class="hot-badge">HOT</div>
+            </div>
+            <div class="pizza-info">
+              <h3 class="pizza-name">Chicken Tikka Masala</h3>
+              <div class="pizza-details">
+                <div class="rating">
+                  <span class="stars">⭐⭐⭐⭐⭐ 5.0</span>
+                  <span class="reviews">(50-70 min)</span>
+                </div>
+                <div class="price-add">
+                  <span class="price">₹299</span>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart(this, 'Fried Chichen Rice', 299)"
+                  >
+                    <span class="plus-icon">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza Item 3 -->
+          <div class="pizza-card">
+            <div class="pizza-image">
+              <img src="Images\IMG-20250529-WA0008.jpg" alt="Home made pizza" />
+              <div class="hot-badge">HOT</div>
+            </div>
+            <div class="pizza-info">
+              <h3 class="pizza-name">Pizza</h3>
+              <div class="pizza-details">
+                <div class="rating">
+                  <span class="stars">⭐⭐⭐ 4.2</span>
+                  <span class="reviews">(30-70 min)</span>
+                </div>
+                <div class="price-add">
+                  <span class="price">₹199</span>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart(this, 'Boiled Chichen with Veggies', 199)"
+                  >
+                    <span class="plus-icon">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza Item 4 -->
+          <div class="pizza-card">
+            <div class="pizza-image">
+              <img src="Images\IMG-20250529-WA0009.jpg" alt="Home made pizza" />
+            </div>
+            <div class="pizza-info">
+              <h3 class="pizza-name">Paneer Butter</h3>
+              <div class="pizza-details">
+                <div class="rating">
+                  <span class="stars">⭐⭐⭐ 3.6</span>
+                  <span class="reviews">(30-50 min)</span>
+                </div>
+                <div class="price-add">
+                  <span class="price">₹99</span>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart(this, 'Pasta', 99)"
+                  >
+                    <span class="plus-icon">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza Item 5 -->
+          <div class="pizza-card">
+            <div class="pizza-image">
+              <img src="Images\IMG-20250529-WA0010.jpg" alt="Home made pizza" />
+            </div>
+            <div class="pizza-info">
+              <h3 class="pizza-name">Pav Bhaji</h3>
+              <div class="hot-badge">HOT</div>
+              <div class="pizza-details">
+                <div class="rating">
+                  <span class="stars">⭐⭐⭐⭐ 4.5</span>
+                  <span class="reviews">(30-70 min)</span>
+                </div>
+                <div class="price-add">
+                  <span class="price">₹199</span>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart(this, 'Home made pizza', 199)"
+                  >
+                    <span class="plus-icon">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza Item 6 -->
+          <div class="pizza-card">
+            <div class="pizza-image">
+              <img src="Images\IMG-20250529-WA0011.jpg" alt="Home made pizza" />
+            </div>
+            <div class="pizza-info">
+              <h3 class="pizza-name">Momos</h3>
+              <div class="pizza-details">
+                <div class="rating">
+                  <span class="stars">⭐⭐⭐ 3.2</span>
+                  <span class="reviews">(30-50 min)</span>
+                </div>
+                <div class="price-add">
+                  <span class="price">₹149</span>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart(this, 'Plain Pizza', 149)"
+                  >
+                    <span class="plus-icon">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza Item 7 -->
+          <div class="pizza-card">
+            <div class="pizza-image">
+              <img src="Images\IMG-20250529-WA0012.jpg" alt="Home made pizza" />
+            </div>
+            <div class="pizza-info">
+              <h3 class="pizza-name">Shahi Paneer</h3>
+              <div class="pizza-details">
+                <div class="rating">
+                  <span class="stars">⭐⭐⭐⭐ 4.2</span>
+                  <span class="reviews">(30-50 min)</span>
+                </div>
+                <div class="price-add">
+                  <span class="price">₹89</span>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart(this, 'Veg Sandwich', 89)"
+                  >
+                    <span class="plus-icon">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza Item 8 -->
+          <div class="pizza-card">
+            <div class="pizza-image">
+              <img src="Images\IMG-20250529-WA0013.jpg" alt="Home made pizza" />
+              <div class="hot-badge">HOT</div>
+            </div>
+            <div class="pizza-info">
+              <h3 class="pizza-name">Bacon Pizza</h3>
+              <div class="pizza-details">
+                <div class="rating">
+                  <span class="stars">⭐⭐⭐⭐⭐ 4.7</span>
+                  <span class="reviews">(30-70 min)</span>
+                </div>
+                <div class="price-add">
+                  <span class="price">₹349</span>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart(this, 'Shahi Paneer', 349)"
+                  >
+                    <span class="plus-icon">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza Item 9 -->
+          <div class="pizza-card">
+            <div class="pizza-image">
+              <img src="Images\IMG-20250529-WA0014.jpg" alt="Home made pizza" />
+            </div>
+            <div class="pizza-info">
+              <h3 class="pizza-name">Garlic Bread</h3>
+              <div class="pizza-details">
+                <div class="rating">
+                  <span class="stars">⭐⭐⭐⭐ 4.0</span>
+                  <span class="reviews">(30-70 min)</span>
+                </div>
+                <div class="price-add">
+                  <span class="price">₹99</span>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart(this, 'Salad', 99)"
+                  >
+                    <span class="plus-icon">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pizza Item 10 -->
+          <div class="pizza-card">
+            <div class="pizza-image">
+              <img src="Images\IMG-20250529-WA0015.jpg" alt="Home made pizza" />
+            </div>
+            <div class="pizza-info">
+              <h3 class="pizza-name">Pancake</h3>
+              <div class="pizza-details">
+                <div class="rating">
+                  <span class="stars">⭐⭐⭐⭐ 4.7</span>
+                  <span class="reviews">(30-50 min)</span>
+                </div>
+                <div class="price-add">
+                  <span class="price">₹149</span>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart(this, 'Bread with Veggie Balls', 149)"
+                  >
+                    <span class="plus-icon">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pizza Item 11 -->
+          <div class="pizza-card">
+            <div class="pizza-image">
+              <img src="Images\IMG-20250529-WA0016.jpg" alt="Home made pizza" />
+              <div class="hot-badge">HOT</div>
+            </div>
+            <div class="pizza-info">
+              <h3 class="pizza-name">Pasta</h3>
+              <div class="pizza-details">
+                <div class="rating">
+                  <span class="stars">⭐⭐⭐⭐ 4.1</span>
+                  <span class="reviews">(30-50 min)</span>
+                </div>
+                <div class="price-add">
+                  <span class="price">₹99</span>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart(this, 'Omlette Sandwich', 99)"
+                  >
+                    <span class="plus-icon">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pizza Item 12 -->
+          <div class="pizza-card">
+            <div class="pizza-image">
+              <img src="Images\IMG-20250529-WA0017.jpg" alt="Home made pizza" />
+              <div class="hot-badge">HOT</div>
+            </div>
+            <div class="pizza-info">
+              <h3 class="pizza-name">Pani Puri</h3>
+              <div class="pizza-details">
+                <div class="rating">
+                  <span class="stars">⭐⭐⭐⭐ 4.3</span>
+                  <span class="reviews">(30-70 min)</span>
+                </div>
+                <div class="price-add">
+                  <span class="price">₹149</span>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart(this, 'Ravioli', 149)"
+                  >
+                    <span class="plus-icon">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Repeat the pattern for more items as needed -->
+        </div>
+      </div>
+    </section>
+
+    <section class="popular-items">
+      <h2>Popular Items</h2>
+
+      <div class="carousel-container">
+        <button class="nav-btn prev-btn" id="prevBtn">
+          <span>&lt;</span>
+        </button>
+
+        <div class="dishes-container" id="dishesContainer">
+          <div class="dish-card active">
+            <div class="discount-badge">20%</div>
+            <img
+              src="Images\IMG-20250529-WA0022.jpg"
+              alt="Home made pizza"
+            />
+            <div class="dish-info">
+              <h3>Home made pizza</h3>
+              <p class="price">₹190</p>
+              <div class="rating-delivery">
+                <div class="rating">
+                  <span class="star">★★★★★</span>
+                  <span>4.7</span>
+                </div>
+                <div class="delivery-time">50-79 min</div>
+              </div>
+              <div class="quantity-controls">
+                <button class="qty-btn minus">-</button>
+                <span class="quantity">0</span>
+                <button class="qty-btn plus">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="discount-badge">20%</div>
+            <img
+              src="Images\IMG-20250529-WA0021.jpg"
+              alt="Tandoori Chicken"
+            />
+            <div class="dish-info">
+              <h3>Tandoori Chicken</h3>
+              <p class="price">₹184</p>
+              <div class="rating-delivery">
+                <div class="rating">
+                  <span class="star">★★★★</span>
+                  <span>4.3</span>
+                </div>
+                <div class="delivery-time">15-29 min</div>
+              </div>
+              <div class="quantity-controls">
+                <button class="qty-btn minus">-</button>
+                <span class="quantity">0</span>
+                <button class="qty-btn plus">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="discount-badge">50%</div>
+            <img
+              src="Images\IMG-20250529-WA0020.jpg"
+              alt="Samosa"
+            />
+            <div class="dish-info">
+              <h3>Samosa</h3>
+              <p class="price">₹120</p>
+              <div class="rating-delivery">
+                <div class="rating">
+                  <span class="star">★★★★</span>
+                  <span>4.1</span>
+                </div>
+                <div class="delivery-time">30-40 min</div>
+              </div>
+              <div class="quantity-controls">
+                <button class="qty-btn minus">-</button>
+                <span class="quantity">0</span>
+                <button class="qty-btn plus">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="discount-badge">30%</div>
+            <img
+              src="Images\IMG-20250529-WA0019.jpg"
+              alt="Butter Chicken"
+            />
+            <div class="dish-info">
+              <h3>Papdi Chaat</h3>
+              <p class="price">₹220</p>
+              <div class="rating-delivery">
+                <div class="rating">
+                  <span class="star">★★★★</span>
+                  <span>4.5</span>
+                </div>
+                <div class="delivery-time">25-35 min</div>
+              </div>
+              <div class="quantity-controls">
+                <button class="qty-btn minus">-</button>
+                <span class="quantity">0</span>
+                <button class="qty-btn plus">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="discount-badge">15%</div>
+            <img
+              src="Images\IMG-20250529-WA0018.jpg"
+              alt="Chicken Biryani"
+            />
+            <div class="dish-info">
+              <h3>Laphing</h3>
+              <p class="price">₹250</p>
+              <div class="rating-delivery">
+                <div class="rating">
+                  <span class="star">★★★★★</span>
+                  <span>4.6</span>
+                </div>
+                <div class="delivery-time">35-45 min</div>
+              </div>
+              <div class="quantity-controls">
+                <button class="qty-btn minus">-</button>
+                <span class="quantity">0</span>
+                <button class="qty-btn plus">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="nav-btn next-btn" id="nextBtn">
+          <span>&gt;</span>
+        </button>
+      </div>
+
+      <!-- Trigger Button -->
+      <div class="request-dish-wrapper"><button id="requestDishBtn" class="request-btn">Request Dish</button></div>
+
+      <!-- Modal -->
+      <div id="requestModal" class="modal-overlay">
+        <div class="modal-content">
+          <h2>Request a Dish</h2>
+          <input type="text" placeholder="Dish name" class="modal-input" />
+          <textarea
+            placeholder="Describe the dish"
+            class="modal-textarea"
+          ></textarea>
+          <div class="modal-actions">
+            <button id="cancelBtn" class="modal-btn cancel">Cancel</button>
+            <button id="submitBtn" class="modal-btn submit">
+              Submit Request
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section">
+      <div class="content-container">
+        <div class="text-content">
+          <h2>
+            We are providing best<br />
+            <span class="highlight">home cooked food delivery service.</span>
+          </h2>
+          <p class="subtitle">
+            Away from home and craving the tasty homemade recipes?
+          </p>
+          <p class="description">
+            Choose from a selection of our delicious home cooked dishes.
+          </p>
+        </div>
+
+        <div class="video-container">
+          <video id="cookingVideo" muted loop>
+            <source src="video\152830-804130714_tiny.mp4" type="video/mp4" />
+            <!-- Fallback image if video doesn't load -->
+            <img
+              src="Images\top-close-view-delicious-fried-chicken-with-different-seasonings-dark-space_140725-79530.avif"
+              alt="Cooking video placeholder"
+            />
+          </video>
+
+          <div class="video-overlay">
+            <button class="play-button" id="playButton">
+              <div class="play-icon" id="playIcon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M8 5v14l11-7z" fill="currentColor" />
+                </svg>
+              </div>
+              <div class="pause-icon" id="pauseIcon" style="display: none">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="contact-container">
+        <div class="contact-content">
+          <h2>Do you have a question<br />or want to become a seller?</h2>
+          <p>
+            Fill out the form and we'll get back to you as soon as possible.
+            We're here to help with any questions about our delivery services or
+            partnership opportunities.
+          </p>
+
+          <div class="delivery-illustration">
+            <div class="delivery-character">
+              <div class="delivery-person"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email address"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us how we can help you..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+              Submit
+            </button>
+
+            <div class="success-message" id="successMessage">
+              <h3>✅ Message Submitted Successfully!</h3>
+              <p>
+                Thank you for reaching out. We'll get back to you within 24
+                hours.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="logo"><a href="#">JTGeats</a></div>
+
+        <ul class="footer-nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="footer-social">
+          <a href="#" target="_blank" aria-label="Facebook">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+              alt="Facebook"
+            />
+          </a>
+          <a href="#" target="_blank" aria-label="Instagram">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
+              alt="Instagram"
+            />
+          </a>
+        </div>
+      </div>
+      <hr />
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
